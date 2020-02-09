@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+
+{% block body %} 
+<img width="100%" height="250" src="https://marketingland.com/wp-content/ml-loads/2015/01/apply-now-job-hiring-help-ss-1920-800x450.jpg" alt="Applyjob">
+<div class="container mt-3">
+    <div class="cotent-section">
+
+
+<form method="POST" enctype="multipart/form-data">
+
+<fieldset class="form-group mt-">
+    <legend class="border-bottom mb-4"> <h2>Update Your Details To Apply for This Job</h2></legend>
+    {% csrf_token %}
+{{ form|crispy }}
+
+<input type="file" name="document" >
+<button type="submit">Upload File </button>
+</fieldset>
+
+<div class="form-group">
+<button class="btn btn-primary" >Apply</button>
+</div>
+
+{% endblock %}

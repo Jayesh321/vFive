@@ -1,0 +1,42 @@
+{% extends 'base.html'  %}
+{% load crispy_forms_tags   %}
+ 
+{% load static %}
+
+{% block customer_css %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
+
+{% block body %}
+<img src="https://image.shutterstock.com/image-illustration/contact-us-icon-phone-email-260nw-1151872529.jpg" alt="contactus" width="100%" height="400">
+
+
+
+<form method="post">
+  <div class="container">
+    <h5>Thank you for your interest in vFive’s services. Please provide the following information about your business needs to help us serve you better. This information will enable us to route your request to the appropriate person. You should receive a response within 48 hours.
+    </h5>
+    <div class="content-section">
+    
+    <form method="POST"> 
+    
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4"> <h2>ContactUS</h2> </legend>
+    
+    {{ form|crispy }}
+    
+    </fieldset>
+    
+    <div class="form-group">
+    <button class="btn btn-outline-info " >Submit</button>
+    </div>
+  
+    </form>
+    
+    </div>
+    </div>
+
+
+
+{% endblock %}

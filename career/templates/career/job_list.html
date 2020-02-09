@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="container">
+    
+{% if perms.career.add_job %}
+    <div class="col-md-12 mt-3 mb-3">
+    <a href="{% url 'career:job_create_url' %}" class="btn btn-secondary btn-lg btn-block">Create Job</a>
+    </div>
+{% endif %}
+
+
+    {% for job in job_list %}
+    <div class="col-md-12">
+        <div class="row no-gutters border rounded overflow-hidden position-relative">
+            <div class="col p-4 position-static">
+                <strong class="d-inline-block mb-2 text-success"><span class="badge badge-primary">Python</span><span
+                        class="badge badge-success">Django</span></strong>
+                <h3 class="mb-0">{{job.title}}</h3>
+                <div class="mb-auto mt-2"><strong>Experience:</strong> {{ job.experience }}</div>
+                <div class="mb-auto mt-2"><strong>Location:</strong> {{ job.location }}</div>
+                <p class="mb-auto mt-2"><strong>Description:</strong> {{job.description|slice:85}}........</p>
+                <a href="{% url 'career:job_detail_url' pk=job.pk %}" class="btn btn-success mt-2">View Details</a>
+                
+                
+            </div>
+        </div>
+    </div>
+    <br>
+    {% endfor %}
+</div>
+{% endblock %}

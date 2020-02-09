@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+
+{% block body %}
+<div class="container">
+<div class="row">
+    <div class="col">
+        <h1>{{job.title}}</h1>
+        <hr>
+        <p><strong>Description:</strong> {{job.description}}</p>
+        <p><strong>Experience:</strong> {{job.experience}}</p>
+        <p><strong>Location:</strong> {{job.location}}</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+
+        <div class="card" style="width: 18rem;">
+            <div class="card-header">
+                <strong>HR Contact Details</strong>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Full Name</li>
+                <li class="list-group-item">+91-0987654321</li>
+                <li class="list-group-item">hr@vfour.com</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-2">
+    <div class="col">
+        <a href="{% url 'career:jobapply_url' %}" class="btn btn-success mt-2 mb-4">Apply</a>
+        {% if perms.career.change_job %}
+        <a href="{% url 'career:job_update_url' pk=job.pk %}" class="btn btn-success mt-2 mb-4 ">Update</a>
+        {% endif %}
+        {% if perms.career.delete_job %}
+        <a href="{% url 'career:job_delete_url' pk=job.pk %}" class="btn btn-danger mt-2 mb-4 ">Delete</a>
+        {% endif %}
+    </div>
+</div>
+</div>
+{% endblock %}
