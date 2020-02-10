@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'career',
     'employee',
     'pragati',
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -131,7 +132,7 @@ MEDIA_URL = '/media/'
 STATICFILES_DIRS = [STATICFILE_DIR,]
 LOGIN_REDIRECT_URL='/'
 CRISPY_TEMPLATE_PACK='bootstrap4'
-
+LOGOUT_REDIRECT_URL='/'
 LOGIN_URL = 'login'
 
 

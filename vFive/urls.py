@@ -25,7 +25,9 @@ urlpatterns = [
     url(r'pragati/', include('pragati.urls', namespace= 'pragati')),
     url(r'^contactus/', views.ContactView.as_view(), name='contact_us'),
     url(r'^aboutus/', views.AboutView.as_view(), name='about_us'),
-    url(r'^employee/', include('employee.urls', namespace='employee'))
+    url(r'^employee/', include('employee.urls', namespace='employee')),
+    url(r'accounts/', include('accounts.urls', namespace='accounts')),
+    url(r'accounts/', include('django.contrib.auth.urls')),
 ]
 
 

@@ -6,7 +6,7 @@ from django.contrib import messages
 from career.forms import UserRegisterationForm
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
- 
+''' 
 def RegistrationView(request):
     if request.method == "POST":
         form=UserRegisterationForm(request.POST)
@@ -19,7 +19,7 @@ def RegistrationView(request):
     else:
         form =  UserRegisterationForm()
 
-    return render(request, 'career/registration.html', {'form':form})
+    return render(request, 'career/registration.html', {'form':form})'''
 
 
 
