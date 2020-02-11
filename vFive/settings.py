@@ -136,9 +136,20 @@ LOGOUT_REDIRECT_URL='/'
 LOGIN_URL = 'login'
 
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+#EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+ADMINS = (('vFive', 'jay72072@gmail.com'))
+MANAGERS = ADMINS
+# When you are playing around with the app and you expect that an email should be sent,
+# just run './manage.py sent_email' and you will get the mail the admin account no matter 
+# who the real reciptant was.
+
+MAILER_EMAIL_BACKEND = 'django_libs.test_email_backend.EmailBackend'
+TEST_EMAIL_BACKEND_RECIPIENTS = ADMINS
+FROM_EMAIL = ADMINS[0][1]
+
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'jayeshkr73608@gmial.com'
+#EMAIL_HOST_USER = 'jay72072@gmial.com'
 EMAIL_HOST_PASSWORD = 'Jayesh@72072'

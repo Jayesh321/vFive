@@ -55,10 +55,12 @@
                 {% if user.is_authenticated %}
                   <a class="dropdown-item" href="{% url 'employee:profile_url'%}">Profile</a>
                   <a class="dropdown-item" href="#">Blog</a>
+                  <a class="dropdown-item" href="{% url 'accounts:password_change' %}">Change Password</a>
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="{% url 'accounts:logout_url'%}">Logout</a>
                   {% else %}
                   <a class="dropdown-item" href="{% url 'accounts:login_url'%}">Login</a>
+                  <a class="dropdown-item" href="#">Blog</a>
                   {% endif %}
                 </div>
               </div>

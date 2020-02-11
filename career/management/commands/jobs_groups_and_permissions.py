@@ -10,6 +10,7 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         hr, created = Group.objects.get_or_create(name = 'HR')
         employee, created = Group.objects.get_or_create(name = 'Employee')
+        candidate, created = Group.objects.get_or_create(name = 'Candidate')
 
         job = ContentType.objects.get_for_model(Job)
 
@@ -19,4 +20,5 @@ class Command(BaseCommand):
         can_view_job = Permission.objects.get(codename = 'view_job', name = 'Can view job', content_type = job)
 
         employee.permissions.add(can_view_job)
+        candidate.permissions.add(can_view_job)
         hr.permissions.add(can_add_job,can_change_job,can_delete_job,can_view_job)

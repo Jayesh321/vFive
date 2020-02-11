@@ -21,8 +21,11 @@
 <button class="btn btn-outline-info" >Login</button >
 </div>
 
-
 <small class="text-muted">
+     <a class="ml-0" href="{% url 'accounts:password_reset_url' %}">Forget Password</a>
+    </small>
+    <br>
+<small class="text-muted mr-2">
     Create an account? <a class="ml-2" href="{% url 'accounts:signup_url' %}">SignUp Now</a>
     </small>
     
