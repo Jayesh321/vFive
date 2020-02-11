@@ -8,12 +8,6 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
-'''class User(auth.models.User, auth.models.PermissionsMixin):
-    
-    def __str__(self):
-        return self.username'''
-
-
 class Job(models.Model):
     title=models.CharField(max_length=256)
     description=models.TextField()

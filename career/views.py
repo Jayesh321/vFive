@@ -6,21 +6,6 @@ from django.contrib import messages
 from career.forms import UserRegisterationForm
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
-''' 
-def RegistrationView(request):
-    if request.method == "POST":
-        form=UserRegisterationForm(request.POST)
-        if form.is_valid():
-            username=form.cleaned_data.get('username')
-            form.save()
-            messages.success(request, f'Account created for {username}!')
-            return redirect ('index')
-
-    else:
-        form =  UserRegisterationForm()
-
-    return render(request, 'career/registration.html', {'form':form})'''
-
 
 
 # Career Application:
